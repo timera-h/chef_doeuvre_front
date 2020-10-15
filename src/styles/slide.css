@@ -1,0 +1,35 @@
+/* .slide-container{
+  margin: auto;
+  width: 100%;
+  padding: 50px 0;
+} */
+
+
+.each-slide > div {
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 750px;
+    width: 100%;
+  }
+  
+  .each-slide span {
+ padding: 10px 50px;
+    font-size: 15px;
+    background: var(--color-1);
+    text-align: center;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    position: relative;
+    top: 600px;
+    left: 700px;
+    color: var(--color-white);
+  }
+
+  @media screen and (max-width: 1024px){
+    .each-slide{
+      display: none;
+    }
+  }

@@ -1,0 +1,77 @@
+@import url("./vars.css");
+
+.footer-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer{
+    width: 100%;
+    min-height: 300px;
+    background: var(--color-1);
+    clear: both;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.footer-main{
+    width: 33%;
+}
+
+.footer-main article img{
+    width: 40px;
+    height: 40px;
+}
+
+
+.reseaux{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.footer-main .form{
+    min-height: 300px;
+} 
+
+.form .input{
+    border: none;
+    outline: none;
+    color: var(--color-white);
+    background: none;
+    border-bottom: 1px solid var(--color-white);
+    width: 50%;
+    font-size: 15px;
+    margin: 10px 0;
+}
+
+.form .input ::placeholder{
+    color: var(--color-white);
+}
+
+.footer-main textarea{
+    height: 50px;
+    margin: 10px 0 0;
+    border: 1px solid var(--color-white);
+    color: var(--color-white);
+}
+
+.footer-main .form .btn-container{
+    background: var(--color-2-transparent);
+    margin: 10px 0;
+}
+
+.footer-main .form .btn-container .btn{
+    background: var(--color-2);
+}
+
+@media screen and (max-width: 768px){
+  .footer-container{
+      width: 100%;
+  }
+}
