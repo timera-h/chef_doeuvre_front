@@ -1,0 +1,15 @@
+@font-face {
+    font-family: "Great Vibes, cursive";
+    src: local("GreatVibes"),
+      url("./../fonts/GreatVibes/GreatVibes-Regular.ttf") format("truetype");
+  }
+  
+  /* @font-face {
+    font-family: "Roboto";
+    src: url("./../fonts/Roboto/Roboto-Regular.ttf") format("truetype")
+        font-weight-normal,
+      url("./../fonts/Roboto/Roboto-Bold.ttf") format("truetype") font-weight-bold,
+      url("./../fonts/Roboto/Roboto-BlackItalic.ttf") format("truetype")
+        font-italic font-weight-normal;
+  }
+   */
