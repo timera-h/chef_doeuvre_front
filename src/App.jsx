@@ -1,6 +1,8 @@
 import React from 'react';
 import { Switch, Route} from "react-router-dom";
 
+import {ProtectedRoute} from "./Components/auth/ProtectedRoute";
+
 // layout
 import HeaderMain from "./Components/Layout/HeaderMain";
 import FooterMain from "./Components/Layout/Footer";
@@ -25,7 +27,7 @@ import UpdateProduct from "./Components/Products/UpdateProduct";
 import FormUpdateProduct from "./Components/Products/FormUpdateProduct";
 import CreateCategory from './Components/Categories/CreateCategory';
 import DeleteCategory from "./Components/Categories/DeleteCategory";
-
+import AuthContext from "./Components/auth/AuthContext";
 
 
 // style
@@ -34,7 +36,9 @@ import './styles/App.css';
 
 
 class App extends React.Component {
+  static contextType = AuthContext;
   render(){
+    const currentUser = this.context.currentUser;
   return (
     <div className="App">
       <HeaderMain />
@@ -49,7 +53,7 @@ class App extends React.Component {
         <Route path="/signin" component={Signin} />
         <Route path="/favorites" component={Favorites} />
         <Route path="/product/:id" component={Product} />
-        <Route path="/profile/:id" component={Profile} />
+        <Route path={`/profile/${currentUser}`} component={Profile} />
         <Route path="/delete/product" component={DeleteProduct} />
         <Route path="/delete/category" component={DeleteCategory} />
         <Route path="/update/product" component={UpdateProduct} />
@@ -57,7 +61,7 @@ class App extends React.Component {
         <Route path="/users" component={Users}/>
         <Route path="/create-product" component={CreateProduct} />
         <Route path="/create-category" component={CreateCategory} />
-        <Route path="/dashboard" component={Dashboard} />
+        <ProtectedRoute path="/dashboard" component={Dashboard} />
         <Route path="/basketShop" component={BasketShop} />
         <Route path="/payement" component={Payement} />
         <Route path="*" component={NotFound} />

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import ProductContext from "../Products/ProductContext";
+import "./../../styles/product.css"
 
 
 export default class ProductList extends Component {
@@ -18,16 +19,16 @@ export default class ProductList extends Component {
       <div className="product-displayer">
       <ul className="list-products-moment">
         {products.map((product, i) => (
-            <Link key={i} to={`/product/${product._id}`}>
           <li className="link-product-moment" key={i}>
-          <div >
+            <Link key={i} to={`/product/${product._id}`}>
+          <div className="product-moment">
               <img src={product.image} alt="" />
-        <p>{product.price}</p>
-            <hr/>
         <p>{product.name}</p>
+            <hr/>
+        <p>{product.price} €</p>
             </div>
-            </li>
             </Link>
+            </li>
         ))}
       </ul>
     </div>

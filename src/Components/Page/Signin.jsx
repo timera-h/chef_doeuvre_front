@@ -27,6 +27,10 @@ export default class Signin extends Component {
     })
   }
 
+  isNotSignup = () => {
+    this.props.history.push("/signup")
+  };
+
   render() {
   return (
    
@@ -37,7 +41,7 @@ export default class Signin extends Component {
         <form action="" className="form-signin"
           onChange={this.handleInput}
           onSubmit={this.handleSubmit}>
-          <h2 className="title">Connectez-Vous</h2>
+          <h2 className="title">J'ai déjà un compte ?</h2>
           <div className="form__group field">
             <span className="icon-flex">
               <FontAwesomeIcon
@@ -84,6 +88,13 @@ export default class Signin extends Component {
       </section>
     
         <span className="separation-signin"></span>
+        <div>
+          <h2 className="title">Je n'ai pas de compte ?</h2>
+        <button className="btn"
+        onClick={() => this.isNotSignup()}>
+          Créer un compte
+        </button>
+        </div>
     </div>
     </div>
   

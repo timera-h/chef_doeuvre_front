@@ -16,10 +16,11 @@ export default function NavTop() {
   const CartContextValue = useContext(CartContext);
   const AuthContextValue = useContext(AuthContext);
 
+  const currentUser = AuthContextValue.currentUser;
     return (
         <>
         <li>
-        <NavLink to="/signin" className="nav-link">
+        <NavLink to={`/profile/${currentUser}`} className="nav-link">
           <span className="icon-user">
             <FontAwesomeIcon
               icon={faUser}
