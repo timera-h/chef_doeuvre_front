@@ -3,7 +3,7 @@ import "./../../styles/ourProducts.css";
 import { Link } from "react-router-dom";
 import ProductCard from "./../Products/ProductCard";
 import ProductContext from "../Products/ProductContext";
-import BtnAddToCart from "../Content/BtnAddToCart";
+import BtnAddToCart from "../Utils/BtnAddToCart";
 
 export default class OurProducts extends Component {
   static contextType = ProductContext;

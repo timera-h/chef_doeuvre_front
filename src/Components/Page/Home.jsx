@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Main from "../Content/MainHome";
+import Main from "../Utils/MainHome";
 
 
 export default class Home extends Component {

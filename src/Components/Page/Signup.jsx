@@ -8,7 +8,7 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faKey } from "@fortawesome/free-solid-svg-icons";
 
 // import moment from "moment";
-import Country from "../Content/Country";
+import Country from "../Utils/Country";
 
 export default class Signup extends Component {
   state = {

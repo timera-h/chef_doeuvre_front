@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
 import AuthContext from "./../auth/AuthContext";
-import BtnSignout from "./../Content/BtnSignout";
+import BtnSignout from "./../Utils/BtnSignout";
 
 // import { faHeart } from "@fortawesome/free-solid-svg-icons";
 // import navBurger from "./../../js/NavBurger";

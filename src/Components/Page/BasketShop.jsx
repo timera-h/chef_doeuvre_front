@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 // import { APIHandler } from "./../../api/handler";
 import CartContext from "./../CartContext/CartContext";
-import Paypal from "./../Content/Paypal";
+import Paypal from "./../Utils/Paypal";
 import CartEmpty from "./../../Assets/img/panier_vide.png";
 import "./../../styles/cart.css";
-import BtnValidateCart from "../Content/BtnValidateCart";
+import BtnValidateCart from "../Utils/BtnValidateCart";
 import Axios from "axios";
 // import { Link } from "react-router-dom";
 

@@ -1,11 +1,11 @@
 import React from "react";
 import "./../../styles/headerMain.css";
-import SearchBar from "./../Content/SearchBar";
+import SearchBar from "./../Utils/SearchBar";
 // import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
 import NavBurger from "./NavBurger";
-import Logo from "./../Content/Logo";
-import NavTop from "./../Content/NavTop";
-import NavMain from "./../Content/NavMain";
+import Logo from "./../Utils/Logo";
+import NavTop from "./../Utils/NavTop";
+import NavMain from "./../Utils/NavMain";
 
 export default function HeaderMain() {
   return (

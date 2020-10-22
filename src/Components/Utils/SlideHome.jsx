@@ -18,18 +18,18 @@ export default class SlideHome extends Component {
         <Slide>
           <div className="each-slide">
             <div style={{ backgroundImage: `url(${slideImages[0]})`}} className="image-container">
-              <Link to="/our-products/soins-naturels"><span>Voir ici</span></Link>
+              <Link className="btn" to="/our-products/soins-naturels"><span>Voir ici</span></Link>
             </div>
           </div> 
           <div className="each-slide">
               <div style={{ backgroundImage: `url(${slideImages[1]})`}} className="image-container">
-                <Link to="/our-products/soins-naturels">  <span>Je découvre !</span></Link>
+                <Link className="btn" to="/our-products/soins-naturels">  <span>Je découvre !</span></Link>
               </div>
             
           </div>
           <div className="each-slide">
             <div style={{backgroundImage: `url(${slideImages[2]})`}} className="image-container">
-              <Link to="/our-products/miels"><span>Je craque !</span></Link>
+              <Link className="btn" to="/our-products/miels"><span>Je craque !</span></Link>
             </div>
           </div>
         </Slide>

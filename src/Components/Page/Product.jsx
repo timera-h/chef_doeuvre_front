@@ -3,7 +3,7 @@ import { APIHandler } from "./../../api/handler";
 // import { Link } from "react-router-dom";
 import "./../../styles/product.css";
 import CartContext from "./../CartContext/CartContext";
-import BtnAddToCart from "./../Content/BtnAddToCart";
+import BtnAddToCart from "./../Utils/BtnAddToCart";
 
 // l'url des products
 const apiHandler = new APIHandler("/api/products");

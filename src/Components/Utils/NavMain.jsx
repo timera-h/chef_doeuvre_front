@@ -3,8 +3,8 @@ import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
-import BtnDashboard from "../Content/BtnDashboard";
-import MenuDropDown from "./../Content/MenuDropDown";
+import BtnDashboard from "../Utils/BtnDashboard";
+import MenuDropDown from "./../Utils/MenuDropDown";
 import AuthContext from "./../auth/AuthContext";
 
 export default function NavMain() {
