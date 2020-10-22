@@ -6,6 +6,7 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faCalendarAlt } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faKey } from "@fortawesome/free-solid-svg-icons";
+import "./../../styles/signup.css";
 
 // import moment from "moment";
 import Country from "../Utils/Country";
@@ -70,6 +71,8 @@ export default class Signup extends Component {
 
   render() {
     return (
+      <>
+      <div className="bg-signup"></div>
       <section id="signup-container">
         <form
           onChange={this.handleInput}
@@ -271,6 +274,7 @@ export default class Signup extends Component {
           </div>
         </form>
       </section>
+      </>
     );
   }
 }

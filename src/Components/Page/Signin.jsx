@@ -33,9 +33,9 @@ export default class Signin extends Component {
 
   render() {
   return (
-   
-      <div>
-      {/* <img src={ImageBg} className="bg-signin-up" alt=""/> */}
+   <>
+      <div className="bg-signin">
+    </div>
     <div className="form-container">
       <section id="signin-container">
         <form action="" className="form-signin"
@@ -96,8 +96,7 @@ export default class Signin extends Component {
         </button>
         </div>
     </div>
-    </div>
-  
+  </>
   );
 }
 }

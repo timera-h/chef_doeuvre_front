@@ -1,6 +1,5 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart as FaHeartEmpty } from "@fortawesome/free-regular-svg-icons";
+import BtnFavorite from "../Utils/BtnFavorite";
 
 export default function ProductCard({ infos }) {
   const res = (infos.price * infos.sold) / 100;
@@ -27,11 +26,7 @@ export default function ProductCard({ infos }) {
           <span>€</span>
         </div>
         <div>
-          <FontAwesomeIcon
-            icon={FaHeartEmpty}
-            size="2x"
-            className="favorite-icon"
-          />
+          <BtnFavorite />
         </div>
       </div>
     </li>

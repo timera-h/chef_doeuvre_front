@@ -2,6 +2,7 @@ import React from 'react';
 import { Switch, Route} from "react-router-dom";
 
 import { ProtectedRoute } from "./Components/auth/ProtectedRoute";
+import { ProtectedRouteAdmin } from "./Components/auth/ProtectedRouteAdmin";
 
 // layout
 import HeaderMain from "./Components/Layout/HeaderMain";
@@ -19,6 +20,7 @@ import Signin from "./Components/Page/Signin";
 import Favorites from "./Components/Page/Favorites";
 import Dashboard from "./Components/Page/Dashboard";
 import BasketShop from "./Components/Page/BasketShop";
+import Favorite from "./Components/Page/Favorite";
 import Payement from "./Components/Page/Payement";
 import NotFound from "./Components/Page/NotFound";
 import CreateProduct from './Components/Products/CreateProduct';
@@ -53,7 +55,7 @@ class App extends React.Component {
         <Route path="/signin" component={Signin} />
         <Route path="/favorites" component={Favorites} />
         <Route path="/product/:id" component={Product} />
-        <Route path="/profile/:id" component={Profile} />
+        <ProtectedRoute path="/profile/:id" component={Profile} />
         <Route path="/delete/product" component={DeleteProduct} />
         <Route path="/delete/category" component={DeleteCategory} />
         <Route path="/update/product" component={UpdateProduct} />
@@ -61,8 +63,9 @@ class App extends React.Component {
         <Route path="/users" component={Users}/>
         <Route path="/create-product" component={CreateProduct} />
         <Route path="/create-category" component={CreateCategory} />
-        <ProtectedRoute path="/dashboard" component={Dashboard} />
+        <ProtectedRouteAdmin path="/dashboard" component={Dashboard} />
         <Route path="/basketShop" component={BasketShop} />
+        <Route path="/favorites" component={Favorite} />
         <Route path="/payement" component={Payement} />
         <Route path="*" component={NotFound} />
       </Switch>

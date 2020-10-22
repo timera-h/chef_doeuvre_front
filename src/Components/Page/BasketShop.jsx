@@ -1,20 +1,18 @@
 import React, { Component } from "react";
 // import { APIHandler } from "./../../api/handler";
+import BtnValidateCart from "./../Utils/BtnValidateCart";
 import CartContext from "./../CartContext/CartContext";
 import Paypal from "./../Utils/Paypal";
 import CartEmpty from "./../../Assets/img/panier_vide.png";
 import "./../../styles/cart.css";
-import BtnValidateCart from "../Utils/BtnValidateCart";
-import Axios from "axios";
-// import { Link } from "react-router-dom";
-
 // const apiHandler = new APIHandler("/api/users");
+// import Axios from "axios";
+// import { Link } from "react-router-dom";
 
 export default class BasketShop extends Component {
   static contextType = CartContext;
 
   async componentDidMount() {
-    // const user = apiHandler.getById()
     await this.context.getTotal();
     this.context.getCart(this.context.cart);
   }
@@ -27,33 +25,26 @@ export default class BasketShop extends Component {
     const removeProduct = this.context.removeProduct;
 
     const successTransaction = async (data) => {
-      const variables = {
-        // detailCart: user.detailCart,
-        dataPayement: data,
-        // paid: true,
-        // cancelled: false,
-        // payerID: "25DHYSPYY75F8",
-        // paymentID: "PAYID-L6IWBCY9KK48592FE8250724",
-        // paymentToken: "EC-5Y833262G6005840D",
-        // returnUrl:
-        //   "https://www.paypal.com/checkoutnow/error?paymentId=PAYID-L6IWBCY9KK48592FE8250724&token=EC-5Y833262G6005840D&PayerID=25DHYSPYY75F8",
-        // address: {
-        //   city: "Paris",
-        //   country_code: "FR",
-        //   line1: "Av. de la Pelouse",
-        //   postal_code: "75002",
-        //   recipient_name: "John Doe",
-        //   state: "Alsace",
-        // },
-      };
-      Axios.post("/api/users/successBuy", variables)
-      // .then(res => {
-      //   if(res.){
-
-      //   } else {
-
-      //   }
-      // })
+      // const variables = {
+      //   detailCart: user.detailCart,
+      //   dataPayement: data,
+      //   paid: true,
+      //   cancelled: false,
+      //   payerID: "25DHYSPYY75F8",
+      //   paymentID: "PAYID-L6IWBCY9KK48592FE8250724",
+      //   paymentToken: "EC-5Y833262G6005840D",
+      //   returnUrl:
+      //     "https://www.paypal.com/checkoutnow/error?paymentId=PAYID-L6IWBCY9KK48592FE8250724&token=EC-5Y833262G6005840D&PayerID=25DHYSPYY75F8",
+      //   address: {
+      //     city: "Paris",
+      //     country_code: "FR",
+      //     line1: "Av. de la Pelouse",
+      //     postal_code: "75002",
+      //     recipient_name: "John Doe",
+      //     state: "Alsace",
+      //   },
+      // };
+     
     };
 
     const transactionError = () => {
@@ -66,7 +57,13 @@ export default class BasketShop extends Component {
 
     return (
       <div>
-       
+        {cart.length === 0 ? (
+          <figure className="cart_empty">
+            <img src={CartEmpty} alt="" />
+            {/* <Link to="/signin" className="btn-signin" >Se connecter</Link> */}
+          </figure>
+        ) : (
+          <>
             <ul className="list-cart">
               {cart.map((product, i) => (
                 <li key={i} className="item-product">
@@ -98,8 +95,6 @@ export default class BasketShop extends Component {
                       X
                     </button>
                   </div>
-            
-                  {cart.length === 0 ? <img src={CartEmpty} alt="" /> : ""}
                 </li>
               ))}
             </ul>
@@ -118,6 +113,8 @@ export default class BasketShop extends Component {
               errorTransaction={transactionError}
               canceledTransaction={canceledTransaction}
             />
+          </>
+        )}
       </div>
     );
   }

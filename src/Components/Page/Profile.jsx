@@ -1,30 +1,22 @@
 import React, { Component } from "react";
 import { apiHandler } from "./../../api/handlers";
+// import { APIHandler } from "./../../api/handler";
 import AuthContext from "./../auth/AuthContext";
+import axios from "axios"
 // import { Link } from "react-router-dom";
+
+// const userHandler = new APIHandler("api/users");
 
 const handler = apiHandler();
 
 export default class Profile extends Component {
-  state = {
-    isEditMode: false,
-    gender: "",
-    firstName: "",
-    lastName: "",
-    email: "",
-    tel: "",
-    address: [
-      {
-        streetNumber: "",
-        streetName: "",
-        zipCode: "",
-        city: "",
-        country: "",
-      },
-    ],
-  };
 
   static contextType = AuthContext;
+
+  
+  state = {
+    
+  };
 
   handleChange = (evt) =>
     this.setState({ [evt.target.name]: evt.target.value });
@@ -33,29 +25,39 @@ export default class Profile extends Component {
     evt.preventDefault();
 
     try {
-      const apiRes = await handler.patch(
-        "/api/users/" + this.props.context.currentUser._id,
-        {
-            gender: this.state.gender || this.props.context.currentUser.gender,
-          firstName:
-            this.state.firstName || this.props.context.currentUser.firstName,
-          lastName:
-            this.state.lastName || this.props.context.currentUser.lastName,
-          email: this.state.email || this.props.context.currentUser.email,
-          tel: this.state.tel || this.props.context.currentUser.tel,
-        }
-      );
+      const apiRes = await handler.patch("/api/users/" + this.props.match.params.id, this.state);
       this.props.context.setCurrentUser(apiRes.data);
     } catch (apiErr) {
       console.error(apiErr);
     }
   };
 
+
+
   async componentDidMount() {
-      console.log(">>>>>>>>>>>>>set user >>>", this.context.currentUser);
+    console.log("current userrr") 
+    const dbres = await axios.get(process.env.REACT_APP_BACKEND_URL + "/api/users/" + this.props.match.params.id)
+    const user = dbres.data;
+    const user2 = {
+      gender: user.gender,
+      firstName: user.firstName,
+      lastName: user.lastName,
+      email: user.email,
+      tel: user.tel,
+      address: user.address
+    }
+    this.setState(user2);
+    console.log("current userrr", user.data) 
+    // console.log(">>>>>>>>>>>>>set user >>>",  user);
+
+    // if(this.context.currentUser != null)
+    // {
+    //   this.setState({currentUser: this.context.currentUser})
+    // }
+    
     const isSignedIn = this.context.isSignedIn;
     if (!isSignedIn) {
-    await  this.isNotSignedIn();
+     this.isNotSignedIn();
     }
   }
 
@@ -64,21 +66,21 @@ export default class Profile extends Component {
   };
 
   render() {
-    // const user = this.context.currentUser;
+    const user = this.state;
       return (
         <div>
+          
           <h1 className="title">
-            Bienvenue{" "}
-            {/* {user.firstName} */}
-            {/* {user.gender === "Female"
+            Bienvenue <span>
+            {user.gender === "Female"
               ? `Mme ${user.lastName} - ${user.firstName}`
-              : `Mr ${user.lastName} - ${user.firstName}`} */}
+              : `Mr ${user.lastName} - ${user.firstName}`}</span>
           </h1>
 
           <section className="user-infos">
             <article className="flex-user-infos">
               <h2 className="title">Mes commandes</h2>
-              {/* {user.products} */}
+              {user.products}
               <form
         onChange={this.handleChange}
         onSubmit={this.updateUser}
@@ -89,19 +91,31 @@ export default class Profile extends Component {
         //   className="input"
           type="text"
           name="firstName"
-          defaultValue={this.context.setCurrentUser.firstName}
+          defaultValue={user.firstName}
         />
         <input
         //   className="input"
           type="text"
           name="lastName"
-          defaultValue={this.context.setCurrentUser.lastName}
+          defaultValue={user.lastName}
         />
         <input
         //   className="input"
           type="text"
           name="email"
-          defaultValue={this.context.setCurrentUser.email}
+          defaultValue={user.email}
+        />
+          <input
+        //   className="input"
+          type="password"
+          name="password"
+          
+        />
+            <input
+        //   className="input"
+          type="passwordConfirme"
+          name="passwordConfirme"
+          
         />
         <button className="btn">update infos</button>
       </form>

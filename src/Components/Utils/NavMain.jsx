@@ -28,7 +28,7 @@ export default function NavMain() {
         <NavLink to="/contact">Contact</NavLink>
       </li>
       <li>
-        {AuthContextValue.isAdmin && (
+        {AuthContextValue.isAdmin2 && (
           <>
             {"\u00A0"} <BtnDashboard />
           </>

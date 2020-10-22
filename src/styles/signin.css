@@ -1,17 +1,15 @@
-/* .bg-signin-up{
+.bg-signin{
+  background-image: url("./../Assets/img/bg-leafs-4.jpg");
+  background-size: cover;
   position: fixed;
-    min-width: 100%;
-    right: 0;
-    bottom: 0;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -1;
-    background-image: url("./../Assets/img/coconut3.jpg");
-    background-position: center;
-    background-size: cover;
-    opacity: 0.5;
-} */
+  min-width: 100%;
+  right: 0;
+  bottom: 0;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+}
 
 #signin-container{
   width: 70%;
@@ -20,30 +18,19 @@
   /* margin: 5px; */
 }
 
-#signup-container{
-  width: 70%;
-  height: auto;
-  /* background: var(--color-white); */
-}
+
 
 .form-signin{
   width: 100%;
-  height: 500px;
+  min-height: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background: var(--color-white);
 }
 
-.form-signup{
-  width: 100%;
-  height: 800px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 150px 0 0;
-}
+
 
 .form-container{
   display: flex;
@@ -76,20 +63,7 @@ div .separation-signin{
   flex-direction: column;
 }
 
-.adress-form .form__field{
-  margin-left: 70px;
-}
 
-.champ-obligatoire{
-  margin: 0 15px 0 0;
-}
-
-.form-control{
-  margin: 30px 0 10px;
-  width: 80%;
-  outline: none;
-  border-radius: 10px;
-}
 
 .form-signin a{
   margin: 10px 0;

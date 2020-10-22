@@ -11,6 +11,7 @@ export default class AuthProvider extends Component {
   state = {
     currentUser: null,
     isSignedIn: false,
+    isAdmin2: false
   };
 
   componentDidMount() {
@@ -30,9 +31,13 @@ export default class AuthProvider extends Component {
       .get("/api/auth/get-user-by-token")
       .then(({ data }) => {
         this.setState({ currentUser: data, isSignedIn: true });
+        if (data.role === "admin")
+        this.setState({ isAdmin2: true });
+        // console.log("provider store :data)
+        // if (data.role === "admin") this.setState({ isAdmin: true });
       })
       .catch((apiErr) => {
-        this.setState({ currentUser: null, isSignedIn: false });
+        this.setState({ currentUser: null, isSignedIn: false, isAdmin2: false });
         console.error(apiErr.message);
       });
   };
@@ -58,6 +63,12 @@ export default class AuthProvider extends Component {
    */
   setCurrentUser = (infos, clbk) => {
     // on met à jour le state du AuthProvider avec les infos user mises à jour, mais :
+    console.log("setCurrent Provider" , infos)
+    if ( infos != null){
+      if (infos.role === "admin") this.setState({isAdmin2 : true});
+    }
+    else  this.setState({isAdmin2 : false});
+    
     this.setState({ currentUser: infos }, () => {
       // setState est ASYNC !!!
       if (clbk) clbk(); // on utilise le callback du SetState AVANT d'exécuter le callback fourni par le component Signin, Signout ou autre !
@@ -117,6 +128,10 @@ export default class AuthProvider extends Component {
     return Boolean(this.getLocalAuthToken());
   };
 
+  // isAdmin2 = function () {
+  //   return Boolean(this.state.currentUser.role === "admin");
+  // };
+
   render() {
     //  Setup all the values/functions you want to expose to anybody reading
     // from the AuthContext.
@@ -127,8 +142,10 @@ export default class AuthProvider extends Component {
       signin: this.signin,
       signup: this.signup,
       signout: this.signout,
-      isAdmin: this.isAdmin(),
-      isSignedIn: this.isSignedIn()
+      isAdmin: this.isAdmin,
+      isAdmin2: this.state.isAdmin2, 
+      isSignedIn: this.isSignedIn(),
+      getUserByToken : this.getUserByToken
     };
 
     return (
