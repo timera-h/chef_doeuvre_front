@@ -5,14 +5,14 @@
 
 .each-slide{
   width: 100%;
-  min-height: 75vh;
+  min-height: 80vh;
 }
 
 
 .each-slide .image-container {
     background-size: cover;
     background-repeat: no-repeat;
-    min-height: 75vh;
+    min-height: 80vh;
     max-width: 100%;
     min-width: 100%;
   }

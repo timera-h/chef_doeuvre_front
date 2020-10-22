@@ -45,11 +45,11 @@ export default class Contact extends Component {
   };
   render() {
     return (
-      <div>
+      <div className="container-form-contact">
         <img className="bg-contact" src={BgImage} alt="" />{" "}
         <form
           action=""
-          className="form"
+          className="form contact"
           onChange={this.handleChange}
           onSubmit={this.handleSubmit}
         >

@@ -10,7 +10,7 @@
 }
 
 .cart_empty{
-    width: 70%;
+    width: 100%;
     min-height: 200px;
     display: flex;
     justify-content: center;

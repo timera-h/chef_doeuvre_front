@@ -1,5 +1,6 @@
 import React from "react";
 import "./../../styles/footer.scss";
+import {Link} from "react-router-dom";
 // import { Link } from "react-dom";
 import Instagram from "./../../Assets/img/instagram.jpeg";
 import Linkedin from "./../../Assets/img/linkedin.jpeg";
@@ -12,15 +13,15 @@ export default function Footer() {
       <section className="footer-main">
         <article className="reseaux">
           <h3 className="title">Rejoignez nous</h3>
-          <img src={Facebook} alt="facebook" />
-          <img src={Instagram} alt="instagram" />
-          <img src={Linkedin} alt="linkedin" />
+          <Link to="https://fr-fr.facebook.com" target="_blank"><img src={Facebook} alt="facebook" /></Link>
+          <Link to=""><img src={Instagram} alt="instagram" /></Link>
+          <Link to=""><img src={Linkedin} alt="linkedin" /></Link>
         </article>
       </section>
       <section className="footer-main">
         <article>
-          <h3 className="title">Contatez nous</h3>
-          <form method="POST" action="" className="form">
+          <Link to="/contact" ><h3 className="title">Contatez nous</h3></Link>
+          {/* <form method="POST" action="" className="form">
               <input
                 type="input"
                 className="input"
@@ -53,12 +54,12 @@ export default function Footer() {
             <div className="btn-container">
             <button className="btn">Envoyer</button>
             </div>
-          </form>
+          </form> */}
         </article>
       </section>
       <section className="footer-main">
         <article>
-          <h3 className="title">News Letters</h3>
+          {/* <h3 className="title">News Letters</h3> */}
         </article>
       </section>
     </footer>

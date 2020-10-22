@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route} from "react-router-dom";
 
-import {ProtectedRoute} from "./Components/auth/ProtectedRoute";
+import { ProtectedRoute } from "./Components/auth/ProtectedRoute";
 
 // layout
 import HeaderMain from "./Components/Layout/HeaderMain";
@@ -38,7 +38,7 @@ import './styles/App.css';
 class App extends React.Component {
   static contextType = AuthContext;
   render(){
-    const currentUser = this.context.currentUser;
+    // const currentUser = this.context.currentUser;
   return (
     <div className="App">
       <HeaderMain />
@@ -53,11 +53,11 @@ class App extends React.Component {
         <Route path="/signin" component={Signin} />
         <Route path="/favorites" component={Favorites} />
         <Route path="/product/:id" component={Product} />
-        <Route path={`/profile/${currentUser}`} component={Profile} />
+        <Route path="/profile/:id" component={Profile} />
         <Route path="/delete/product" component={DeleteProduct} />
         <Route path="/delete/category" component={DeleteCategory} />
         <Route path="/update/product" component={UpdateProduct} />
-        <Route path="/update/:id" component={FormUpdateProduct}/>
+        <Route path="/update/product/:id" component={FormUpdateProduct}/>
         <Route path="/users" component={Users}/>
         <Route path="/create-product" component={CreateProduct} />
         <Route path="/create-category" component={CreateCategory} />

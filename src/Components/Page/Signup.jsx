@@ -7,7 +7,7 @@ import { faCalendarAlt } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faKey } from "@fortawesome/free-solid-svg-icons";
 
-import moment from "moment";
+// import moment from "moment";
 import Country from "../Content/Country";
 
 export default class Signup extends Component {
@@ -15,7 +15,7 @@ export default class Signup extends Component {
     gender: "Female",
     firstName: "test firstname",
     lastName: "test lastname",
-    birthDate: moment().format("DD MM YYYY"),
+    birthDate: Date,
     email: "test@test.test",
     address: {
       streetNumber: 2,

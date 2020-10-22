@@ -13,18 +13,19 @@ export default class CartProvider extends Component {
   addProductToCart = (product) => {
     const clone = [...this.state.cart];
     clone.push(product);
+    this.getCart();
     this.setState({ cart: clone }, () => {
-      localStorage.setItem("cart", JSON.stringify(this.state.cart))
+  localStorage.setItem("cart", JSON.stringify(this.state.cart))
     });
     console.log("push", clone);
   };
 
-  getCart = () => {
-    console.log("get item", localStorage.getItem("cart"));
-    const item = localStorage.getItem("cart");
-   return item;
+ 
+  getCart = (product) => {
+    const cartLocal = localStorage.getItem("cart", product);
+    console.log("pluuuuuus", cartLocal);
+    return cartLocal ? JSON.parse(cartLocal) : [];
   };
-
   
 
 getTotal = () => {
@@ -64,6 +65,7 @@ getTotal = () => {
       cart.forEach((product, i) => {
         if(product._id === id) {
           cart.splice(i, 1)
+          // localStorage.removeItem("cart", )
         }
       })
       this.setState({cart: cart});

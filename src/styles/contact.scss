@@ -98,10 +98,10 @@ textarea{
   font-size: 15px;
 }
 .btn-container{
-    width: 125px;
-    height: 40px;
-    border-radius: 3px;
-    background: var(--color-1-transparent);
+    width: 170px;
+    height: 50px;
+    // border-radius: 3px;
+    // background: var(--color-1-transparent);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -110,14 +110,18 @@ textarea{
 
 .btn{
     border: none;
-    width: 115px;
-    height: 30px;
-    border-radius: 3px;
+    width: 150px;
+    height: 40px;
+    // border-radius: 3px;
     background: var(--color-1);
     color: var(--color-white);
     z-index: 3;
     outline: none;
   font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.btn:hover{
+  background: var(--color-hover-btn);
 }
 
 .bg-contact{
@@ -131,4 +135,10 @@ textarea{
     z-index: -1;
     background-size: cover;
     opacity: 0.7;
+}
+
+@media screen and (max-width: 1024px){
+  .container-form-contact{
+    width: 100%;
+  }
 }

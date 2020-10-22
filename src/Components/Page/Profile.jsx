@@ -34,7 +34,7 @@ export default class Profile extends Component {
 
     try {
       const apiRes = await handler.patch(
-        "/api/users" + this.props.context.currentUser._id,
+        "/api/users/" + this.props.context.currentUser._id,
         {
             gender: this.state.gender || this.props.context.currentUser.gender,
           firstName:
@@ -52,6 +52,7 @@ export default class Profile extends Component {
   };
 
   async componentDidMount() {
+      console.log(">>>>>>>>>>>>>set user >>>", this.context.currentUser);
     const isSignedIn = this.context.isSignedIn;
     if (!isSignedIn) {
     await  this.isNotSignedIn();
@@ -63,12 +64,12 @@ export default class Profile extends Component {
   };
 
   render() {
-    const user = this.context.currentUser;
+    // const user = this.context.currentUser;
       return (
         <div>
           <h1 className="title">
             Bienvenue{" "}
-            {/* {user.name} */}
+            {/* {user.firstName} */}
             {/* {user.gender === "Female"
               ? `Mme ${user.lastName} - ${user.firstName}`
               : `Mr ${user.lastName} - ${user.firstName}`} */}
@@ -78,6 +79,32 @@ export default class Profile extends Component {
             <article className="flex-user-infos">
               <h2 className="title">Mes commandes</h2>
               {/* {user.products} */}
+              <form
+        onChange={this.handleChange}
+        onSubmit={this.updateUser}
+        className="form"
+      >
+        <h3 className="title">My infos</h3>
+        <input
+        //   className="input"
+          type="text"
+          name="firstName"
+          defaultValue={this.context.setCurrentUser.firstName}
+        />
+        <input
+        //   className="input"
+          type="text"
+          name="lastName"
+          defaultValue={this.context.setCurrentUser.lastName}
+        />
+        <input
+        //   className="input"
+          type="text"
+          name="email"
+          defaultValue={this.context.setCurrentUser.email}
+        />
+        <button className="btn">update infos</button>
+      </form>
             </article>
           </section>
         </div>

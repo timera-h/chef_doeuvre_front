@@ -9,7 +9,7 @@ export default function BtnAddToCart({infos}) {
         className="add-product"
         onClick={() => CartContextValue.addToCart(infos)}
       >
-        <span className="add-in-shop-cart">Ajouter au panier</span>
+        <span className="add-in-shop-cart"> <span className="plus-cart">+</span> Ajouter au panier</span>
       </button>
         )
     }

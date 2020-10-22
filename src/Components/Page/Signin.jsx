@@ -4,7 +4,6 @@ import { faEnvelope, faKey} from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import AuthContext from "../auth/AuthContext";
 
-
 import "./../../styles/signin.css";
 
 export default class Signin extends Component {
@@ -21,9 +20,10 @@ export default class Signin extends Component {
   handleSubmit = (evt) => {
     evt.preventDefault();
     const currentUser = this.context.currentUser;
+    console.log(">>>> currentUser", currentUser);
     this.context.signin(this.state, () => {
       console.log("mon user >>>> ", this.state);
-      this.props.history.push(`/profile/${currentUser}`);
+      this.props.history.push("/profile/" + this.context.currentUser._id);
     })
   }
 

@@ -82,7 +82,7 @@ export default class UpdateProduct extends Component {
                 </td>
                 <td className="cell">
                     
-                         <Link to={`/update/${product._id}`}>
+                         <Link to={`/update/product/${product._id}`}>
                             modifier
                   </Link>
                

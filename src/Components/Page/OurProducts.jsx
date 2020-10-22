@@ -2,9 +2,6 @@ import React, { Component } from "react";
 import "./../../styles/ourProducts.css";
 import { Link } from "react-router-dom";
 import ProductCard from "./../Products/ProductCard";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart as FaHeartEmpty } from "@fortawesome/free-regular-svg-icons";
-import ShopCart from "./../../Assets/img/shopping-bag.svg";
 import ProductContext from "../Products/ProductContext";
 import BtnAddToCart from "../Content/BtnAddToCart";
 
@@ -44,12 +41,6 @@ export default class OurProducts extends Component {
                   <ProductCard key={i} infos={product} />
                 </Link>
                 <BtnAddToCart infos={product} />
-                <img
-                  src={ShopCart}
-                  alt="ajoutez au panier"
-                  style={{ width: "40px", height: "auto" }}
-                />
-                <FontAwesomeIcon icon={FaHeartEmpty} />
               </div>
             ))}
           </ul>

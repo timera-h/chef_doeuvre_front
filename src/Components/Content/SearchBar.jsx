@@ -1,28 +1,32 @@
-import React, { useState, useContext } from "react";
+import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import ProductContext from "../Products/ProductContext";
 import Products from "./../Products/Products";
 
-export default function SearchBar() {
-  const ProductContextValue = useContext(ProductContext);
+export default class SearchBar extends Component {
 
-  const [search, setSearch] = useState("");
-
-  const handleSearch = (evt) => {
-    evt.preventDefault();
-    setSearch(evt.target.value);
-    evt.target.style.display = "block"
+  state = {
+    search: "",
   };
 
-  if (search.length > 0) {
-    ProductContextValue.products = ProductContextValue.products.filter(
+  static contextType = ProductContext;
+
+
+   handleSearch = async (evt) => {
+    // evt.preventDefault();
+    //  this.setState(evt.target.value);
+  };
+
+ 
+render(){
+  if (this.state.search.length > 0) {
+    this.context.products = this.context.products.filter(
       (product) => {
-        return product.name.toLowerCase().match(search);
+        return product.name.toLowerCase().match(this.state.search);
       }
     );
   }
-
   return (
     <div className="nav-top-search">
       <input
@@ -30,8 +34,8 @@ export default function SearchBar() {
         type="text"
         className="input-search active"
         placeholder="Rechercher un produit ..."
-        onChange={handleSearch}
-        value={search}
+        onChange={this.handleSearch}
+        value={this.state.search}
       />
       <FontAwesomeIcon icon={faSearch} className="search-icon" size="lg"/>
       <div className="search-products " style={{display: "none"}}>
@@ -39,4 +43,5 @@ export default function SearchBar() {
       </div>
     </div>
   );
+}
 }

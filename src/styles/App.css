@@ -30,7 +30,7 @@ a{
 }
 
 input,
-select{
+select, button{
   outline: none;
   font-family: 'Montserrat Alternates', sans-serif;
 }

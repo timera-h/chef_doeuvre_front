@@ -94,3 +94,22 @@ div .separation-signin{
 .form-signin a{
   margin: 10px 0;
 }
+
+@media screen and (max-width: 1024px){
+  #signin-container{
+    width: 100%;
+  }
+
+  .form-signin{
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 649px){
+  #signin-container{
+    width: 100%;
+  }
+  .form-signin{
+    width: 100%;
+  }
+}

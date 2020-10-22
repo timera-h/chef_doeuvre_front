@@ -26,6 +26,7 @@ footer{
 .footer-main article img{
     width: 40px;
     height: 40px;
+    box-shadow: 2px 4px 8px 2px rgba(0, 0, 0, 0.452);
 }
 
 
@@ -59,6 +60,7 @@ footer{
     margin: 10px 0 0;
     border: 1px solid var(--color-white);
     color: var(--color-white);
+    width: 50%;
 }
 
 .footer-main .form .btn-container{

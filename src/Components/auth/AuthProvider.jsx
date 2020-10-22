@@ -127,7 +127,7 @@ export default class AuthProvider extends Component {
       signin: this.signin,
       signup: this.signup,
       signout: this.signout,
-      isAdmin: this.isAdmin,
+      isAdmin: this.isAdmin(),
       isSignedIn: this.isSignedIn()
     };
 

@@ -3,6 +3,7 @@ import { APIHandler } from "./../../api/handler";
 // import { Link } from "react-router-dom";
 import "./../../styles/product.css";
 import CartContext from "./../CartContext/CartContext";
+import BtnAddToCart from "./../Content/BtnAddToCart";
 
 // l'url des products
 const apiHandler = new APIHandler("/api/products");
@@ -66,11 +67,8 @@ export default class Product extends Component {
                     {product.price}
                     <span>€</span>
                   </p>
-                    <div className="btn-container">
-                      <button className="btn add-product" onClick={() => this.context.addToCart(product)}>
-                        Ajoutez au panier
-                      </button>
-                    </div>
+                <BtnAddToCart infos={product} />
+                   
                 </div>
               </div>
             </article>

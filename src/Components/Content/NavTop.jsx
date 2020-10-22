@@ -5,9 +5,10 @@ import CartContext from "./../CartContext/CartContext";
 import AuthContext from "./../auth/AuthContext";
 import BtnSignout from "./BtnSignout";
 import ShopCart from "./../../Assets/img/shopping-bag.svg";
+import BtnProfile from "./BtnProfile";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser, faHeart } from "@fortawesome/free-solid-svg-icons";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
 
 
@@ -16,20 +17,11 @@ export default function NavTop() {
   const CartContextValue = useContext(CartContext);
   const AuthContextValue = useContext(AuthContext);
 
-  const currentUser = AuthContextValue.currentUser;
+  // const currentUser = AuthContextValue.currentUser;
     return (
         <>
         <li>
-        <NavLink to={`/profile/${currentUser}`} className="nav-link">
-          <span className="icon-user">
-            <FontAwesomeIcon
-              icon={faUser}
-              style={{ margin: "0 10px 0" }}
-              size="lg"
-            />
-            Mon compte
-          </span>
-        </NavLink>
+        <BtnProfile />
       </li>
       <li style={{display: "flex"}}>
         {AuthContextValue.isSignedIn && (
