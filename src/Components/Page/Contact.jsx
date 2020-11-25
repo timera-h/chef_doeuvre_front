@@ -70,7 +70,6 @@ export default class Contact extends Component {
                 placeholder="Prénom"
                 name="firstName"
                 required
-                defaultValue={this.state.firstName}
               />
               <label htmlFor="firstName" className="label">
                 Prénom
@@ -91,7 +90,6 @@ export default class Contact extends Component {
                 placeholder="Nom"
                 name="lastName"
                 required
-                defaultValue={this.state.lastName}
               />
               <label htmlFor="lastName" className="label">
                 Nom
@@ -111,7 +109,6 @@ export default class Contact extends Component {
                 placeholder="Téléphone"
                 name="tel"
                 required
-                defaultValue={this.state.tel}
               />
               <label htmlFor="tel" className="label">
                 Téléphone
@@ -132,7 +129,6 @@ export default class Contact extends Component {
                 placeholder="Email"
                 name="email"
                 required
-                defaultValue={this.state.email}
               />
               <label htmlFor="email" className="label">
                 Email
@@ -151,7 +147,6 @@ export default class Contact extends Component {
                 placeholder="Sujet du message"
                 name="subject"
                 required
-                defaultValue={this.state.subject}
               />
 
               <label htmlFor="subject" className="label">
@@ -165,7 +160,6 @@ export default class Contact extends Component {
             name="message"
             cols="30"
             rows="10"
-            defaultValue={this.state.message}
           ></textarea>
 
           <div className="btn-container">
