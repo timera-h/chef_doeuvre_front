@@ -21,8 +21,8 @@ export default class Contact extends Component {
     lastName: "tata",
     tel: "0610000000",
     email: "timera.barry@gmail.com",
-    subject: "commande",
-    message: "Bonjour je vous contact concernant une commande ....",
+    subject: "",
+    message: "",
   };
 
   handleChange = (e) => this.setState({ [e.target.name]: e.target.value });
