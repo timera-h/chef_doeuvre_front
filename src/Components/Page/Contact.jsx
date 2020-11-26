@@ -19,7 +19,7 @@ export default class Contact extends Component {
   state = {
     firstName: "toto",
     lastName: "tata",
-    tel: "0600000000",
+    tel: "0610000000",
     email: "timera.barry@gmail.com",
     subject: "commande",
     message: "Bonjour je vous contact concernant une commande ....",
