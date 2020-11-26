@@ -8,13 +8,14 @@ import AuthContext from "./../auth/AuthContext";
 
 export default class BtnProfile extends Component {
     static contextType = AuthContext;
+    profile() {
+      this.props.history.push("/profile/" + this.context.currentUser)
+    }
     
 
     render() {
-        const currentUser = this.context.currentUser;
-        console.log("my current", currentUser);
         return (
-            <NavLink to={`/profile/${currentUser}`} className="nav-link">
+            <NavLink onClick={() => this.profile()}  className="nav-link">
           <span className="icon-user">
             <FontAwesomeIcon
               icon={faUser}
