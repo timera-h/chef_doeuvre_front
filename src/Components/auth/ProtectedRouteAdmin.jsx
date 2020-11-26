@@ -2,6 +2,8 @@ import React from "react";
 import { Route, Redirect } from "react-router-dom";
 import AuthContext from "./AuthContext";
 
+// proteger la route de l'admin
+
 export const ProtectedRouteAdmin = ({ component: Component, ...rest }) => (
   <AuthContext.Consumer>
     {({ isAdmin2 }) => ( // destructuration de isSignedIn (une valeur du contexte ...)

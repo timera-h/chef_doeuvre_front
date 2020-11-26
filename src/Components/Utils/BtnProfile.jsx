@@ -10,6 +10,7 @@ export default class BtnProfile extends Component {
     static contextType = AuthContext;
 
     render() {
+      // bug sur boutton profile ne récupère pas l'id du currentUser
 
         return (
             <NavLink to={"/profile/" + this.context.currentUser} className="nav-link">

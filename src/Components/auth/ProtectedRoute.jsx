@@ -2,6 +2,8 @@ import React from "react";
 import { Route, Redirect } from "react-router-dom";
 import AuthContext from "./AuthContext";
 
+// proteger les route si on est pas connecter
+
 export const ProtectedRoute = ({ component: Component, ...rest }) => (
   <AuthContext.Consumer>
     {({ isSignedIn }) => ( // destructuration de isSignedIn (une valeur du contexte ...)
